@@ -1,0 +1,21 @@
+<h4>Login</h4>
+
+<div *ngIf="!loggedIn" class="login-other d-flex">
+  <a href="javascript:" (click)="signInWithGoogle()">
+    <img src="assets/images/google-login.png" alt="" />
+  </a>
+  <a href="javascript:" (click)="signInWithGoogle()">
+    <img src="assets/images/facebook-login.png" alt="" />
+  </a>
+</div>
+<br />
+<div *ngIf="loggedIn">
+  <img [src]="user?.photoUrl">
+  <div>
+    <h4>{{ user?.name }}</h4>
+    <p>{{ user?.email }}</p>
+  </div>
+
+  <button (click)="signOut()">Logout</button>
+
+</div>
